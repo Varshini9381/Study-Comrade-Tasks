@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task-1</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+:root {
+  --bg: #eaf0ec;
+  --accent: #2f6b63;
+  --muted: #6b6b6b;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--accent);
+}
+
+/* page grid */
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: start;
+  padding: 36px;
+  box-sizing: border-box;
+}
+
+/* top nav / breadcrumb */
+.site-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* main content area */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 420px 1fr;
+  gap: 24px;
+  justify-items: center;
+}
+
+/* big heading */
+h1.big {
+  grid-column: 2;
+  font-family: Georgia, serif;
+  font-size: 6rem;
+  line-height: 0.9;
+  margin: 20px 0;
+  color: #243a3a;
+  text-align: center;
+}
+
+/* sub link */
+.heading-sub {
+  grid-column: 2;
+  text-align: center;
+  margin-bottom: 26px;
+}
+.heading-sub a {
+  color: #1b6f9a;
+  text-decoration: underline;
+  font-size: 15px;
+}
+
+/* image box */
+.photo {
+  grid-column: 2;
+  margin-top: 30px;
+}
+.photo img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  border: 6px solid #f3faf7;
+}
+
+/* footer */
+.footer-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 18px 0 0 0;
+}
+
+/* vertical captions */
+.side-caption {
+  position: fixed;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.85;
+  pointer-events: none;
+}
+.side-caption.left {
+  left: 6px;
+  right: auto;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+/* responsive */
+@media (max-width: 840px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+  h1.big {
+    font-size: 3rem;
+    grid-column: 1;
+  }
+  .photo img {
+    width: 150px;
+    height: 150px;
+  }
+  .side-caption {
+    display: none;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="site-meta">
+      <span>Home</span> • <span>Sample page</span>
+    </div>
+
+    <main class="main">
+      <h1 class="big">This is big text.</h1>
+
+      <div class="heading-sub">
+        <p>This is a link to<a href="#"> Stevenson High School</a></p>
+        <p>This is an email link to<a href="#"> Mrs Smith</a></p>
+      </div>
+
+      <div class="photo">
+        <!-- replace dog.jpg with your image file -->
+         <img src="https://tse2.mm.bing.net/th/id/OIP.O0zI4cPstjz8gs1JJR10ywHaEo?pid=Api&P=0&h=180" />
+         </div>
+    </main>
+
+    <div class="footer-note">This is center aligned.</div>
+
+    <div class="side-caption left">This is left aligned.</div>
+    <div class="side-caption">This is right aligned.</div>
+  </div>
+</body>
+</html>
